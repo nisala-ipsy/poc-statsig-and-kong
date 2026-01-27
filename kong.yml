@@ -1,0 +1,16 @@
+_format_version: "3.0"
+
+services:
+  - name: redirect-service
+    url: http://example.com
+    routes:
+      - name: redirect-route
+        paths:
+          - /
+    plugins:
+      - name: statsig-redirect
+        config:
+          api_key: ""
+          gate_name: "nisala_test_feature_gate"
+          url_true: "https://google.com"
+          url_false: "https://youtube.com"
